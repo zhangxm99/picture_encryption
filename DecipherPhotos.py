@@ -21,7 +21,6 @@ if __name__ == "__main__":
     origin = _strlist[int(pieces) - 1]
     _strlist.pop()
     _img = Image.new('RGB', (width, height), (0, 0, 0))
-    _img.show()
     for h in range(height):
         for w in range(width):
             sum1 = origin[w,h][0]
@@ -32,4 +31,5 @@ if __name__ == "__main__":
                 sum2 = imageminus(sum2,picture[w,h][1])
                 sum3 = imageminus(sum3,picture[w,h][2])
             _img.putpixel((w, h), (sum1,sum2,sum3))
+    _img.show()	
     _img.save('origin.png','PNG')
